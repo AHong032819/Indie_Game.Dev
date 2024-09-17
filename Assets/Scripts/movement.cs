@@ -1,3 +1,5 @@
+//移動程式
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.FullSerializer;
@@ -22,6 +24,7 @@ public class Playermovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //取得輸入
         horizontal = Input.GetAxisRaw("Horizontal");
 
         if(Input.GetButtonDown("Jump") && IsGrounded())
@@ -43,11 +46,12 @@ public class Playermovement : MonoBehaviour
      rb.velocity = new Vector2(horizontal*speed,rb.velocity.y);   
     }
 
+    //判斷是否觸地
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position,0.2f,groundLayer);
     }
-
+    //轉向
     private void Flip()
     {
         if(isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
