@@ -9,16 +9,20 @@ public class Playermovement : MonoBehaviour
 {
     private float horizontal;
     private float speed = 8f;
-    [SerializeField]private float jumpingPowe = 16f;
+    [SerializeField]private float jumpingPower = 16f;
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    //可調整下墜速度
+    [SerializeField]float fallMultiplier;
+    Vector2 VecGravity;
     // Start is called before the first frame update
     void Start()
     {
-       
+       VecGravity = new Vector2(0, -Physics2D.gravity.y);
+        rb = GetComponent<Rigidbody2D>(); 
     }
 
     // Update is called once per frame
@@ -29,7 +33,7 @@ public class Playermovement : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") && IsGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x,jumpingPowe);
+            rb.velocity = new Vector2(rb.velocity.x,jumpingPower);
         }
 
         if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
@@ -38,6 +42,12 @@ public class Playermovement : MonoBehaviour
         }
 
         Flip();
+
+        //物體下墜速度
+        if(rb.velocity.y<0)
+        {
+            rb.velocity -= VecGravity*fallMultiplier*Time.deltaTime;
+        }
 
         
     }
