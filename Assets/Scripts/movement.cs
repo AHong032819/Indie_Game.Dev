@@ -7,7 +7,7 @@ public class Playermovement : MonoBehaviour
 {
     private float horizontal;
     private float speed = 8f;
-    private float jumpingPowe = 16f;
+    [SerializeField]private float jumpingPowe = 16f;
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
