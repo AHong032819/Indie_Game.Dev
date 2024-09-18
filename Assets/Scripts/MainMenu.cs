@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] GameObject taskbutton;
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("1_Scene");
+        SceneManager.LoadSceneAsync("Test_Scene1");
     }
 }
