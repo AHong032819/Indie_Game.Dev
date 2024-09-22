@@ -19,11 +19,13 @@ public class Playermovement : MonoBehaviour
     //可調整下墜速度
     [SerializeField]float fallMultiplier;
     Vector2 VecGravity;
+    
     // Start is called before the first frame update
     void Start()
     {
-       VecGravity = new Vector2(0, -Physics2D.gravity.y);
+        VecGravity = new Vector2(0, -Physics2D.gravity.y);
         rb = GetComponent<Rigidbody2D>(); 
+
     }
 
     // Update is called once per frame
@@ -54,7 +56,7 @@ public class Playermovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-     rb.velocity = new Vector2(horizontal*speed,rb.velocity.y);   
+        rb.velocity = new Vector2(horizontal*speed,rb.velocity.y);
     }
 
     //判斷是否觸地
@@ -71,6 +73,7 @@ public class Playermovement : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
+            
         }
     }
 }
