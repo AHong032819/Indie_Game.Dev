@@ -27,7 +27,6 @@ public class Player_FINISH : MonoBehaviour
     }
     public void FINISH()
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene("Test_Scene2");
     }
 }
