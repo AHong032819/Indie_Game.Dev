@@ -741,7 +741,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!1001 &813960454
+--- !u!1001 &1780980596
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -751,11 +751,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 475070294659994337, guid: 09eb40504bc2ff048be18c50fd421f5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.550524
+      value: -5.2499046
       objectReference: {fileID: 0}
     - target: {fileID: 475070294659994337, guid: 09eb40504bc2ff048be18c50fd421f5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15092874
+      value: -1.5789125
       objectReference: {fileID: 0}
     - target: {fileID: 475070294659994337, guid: 09eb40504bc2ff048be18c50fd421f5e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -942,4 +942,4 @@ SceneRoots:
   - {fileID: 1957758450}
   - {fileID: 333309121}
   - {fileID: 1877397775}
-  - {fileID: 813960454}
+  - {fileID: 1780980596}
